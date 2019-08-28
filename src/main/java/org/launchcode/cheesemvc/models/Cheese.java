@@ -5,24 +5,25 @@ import java.util.HashMap;
 public class Cheese {
         //properties
         private String description;
-
+        private int cheeseId;
         private String name;
+        private static int nextId = 1;
 
-        private static HashMap<String, String> cheeses = new HashMap<>();
 
-        public String getDescription() {
-            return description;
+        public Cheese(String name, String description){
+            this();
+            this.name = name;
+            this.description = description;
         }
 
         public Cheese(){
+            cheeseId = nextId;
+            nextId++;
         }
 
-        public Cheese(String name, String description){
-            this.name = name;
-            this.description = description;
-            this.cheeses.put(name, description);
-
-        }
+        public String getDescription() {
+        return description;
+    }
 
         public void setDescription(String description) {
             this.description = description;
@@ -36,8 +37,12 @@ public class Cheese {
             this.name = name;
         }
 
-        public static HashMap<String, String> getCheeses() {
-            return cheeses;
+        public int getCheeseId() {
+            return cheeseId;
+        }
+
+        public void setCheeseId(int cheeseId) {
+            this.cheeseId = cheeseId;
         }
 }
 
