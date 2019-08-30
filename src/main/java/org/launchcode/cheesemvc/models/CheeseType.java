@@ -6,7 +6,7 @@ public enum CheeseType {
     SOFT ("Soft"),
     FAKE ("Fake");
 
-    private final String name;
+    private String name;
 
     CheeseType(String name) {
         this.name = name;
@@ -14,6 +14,10 @@ public enum CheeseType {
 
     public String getName() {
         return name;
+    }
+
+    public void setName() {
+        this.name = name;
     }
 
 }
