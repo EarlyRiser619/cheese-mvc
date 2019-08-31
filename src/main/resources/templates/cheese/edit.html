@@ -6,7 +6,7 @@
 
 <nav th:replace="fragments :: navigation"></nav>
 
-<form method="post" style="max-width:600px;" th:object="${cheese}">
+<form method="post" action="/cheese/edit/" style="max-width:600px;" th:object="${cheese}">
     <div class="form-group">
         <label class="name-field" th:for="name">Name</label>
         <input class="form-control" th:field="*{name}" />
@@ -26,7 +26,7 @@
                     th:value="${cheeseType}"></option>
         </select>
     </div>
-    <input type="hidden" th:field="*{cheeseId}" name="cheeseId" />
+    <input type="hidden" th:value="${cheese.cheeseId}" name="cheeseId"/>
     <input type="submit" value="Edit Cheese" />
 </form>
 
